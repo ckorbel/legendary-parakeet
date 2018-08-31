@@ -10,9 +10,16 @@ request('https://ckorbel.github.io/', (err, res, html) => {
         // console.log(siteHeading.html());
         // console.log(siteHeading.text());
         // const output = siteHeading.find('h1').text();
-        const output = siteHeading.children('h1').next().text();
+        // const output = siteHeading.children('h1').next().text();
+        //const output = siteHeading.parent('h1').next().text();
 
+        $('li a').each((i, el) => {
+            const item = $(el).text();
+            const link = $(el).attr('href');
 
-        console.log(output);
+            console.log(item, link);
+        });
+
+        //console.log(output);
     }
 });
